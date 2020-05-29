@@ -1,0 +1,3 @@
+[submodule "algo/leetcode"]
+	path = algo/leetcode
+	url = git@github.com:Yu-TingWang/Leetcode.git
