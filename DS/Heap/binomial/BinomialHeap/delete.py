@@ -7,7 +7,7 @@ def delete(h: Heap, x: Node):
     """
     Delete node x from heap h.
     :param h: a Binomial Heap
-    :param x: a Binomial Node in heap
+    :param x: a Binomial BinaryNode in heap
     :return:
     """
     import math
