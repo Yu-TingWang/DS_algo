@@ -1,5 +1,4 @@
 from DS.AVL_Tree import AVL_Node as Node
-from DS.AVL_Tree import binary_search
 
 
 def get_height(n: Node):
