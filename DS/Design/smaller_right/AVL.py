@@ -99,25 +99,19 @@ def insert(root: Node, key: int, index: int, count: list):
     # get the balance factor
     balance = get_balance(root)
     # perform rotation if unbalanced
-    # left-left case
-    if balance > 1 and key < root.left.key:
+    if balance > 1: # left case
+        if key > root.left.key: # left-right case
+            root.left = left_rotate(root.left)
         return right_rotate(root)
-    # right-right case
-    if balance < -1 and key > root.right.key:
-        return left_rotate(root)
-    # left-right case
-    if balance > 1 and key > root.left.key:
-        root.left = left_rotate(root.left)
-        return right_rotate(root)
-    # right-left case
-    if balance < -1 and key < root.right.key:
-        root.right = right_rotate(root.right)
+    if balance < -1: # right case
+        if key < root.right.key: # right-left case
+            root.right = right_rotate(root.right)
         return left_rotate(root)
     return root
 
 
 def construct(A: list):
-    t = Node(A[-1])  # start from the end of the array
+    # start from the end of the array
     root = Node(A[-1])
     B=[0]*len(A)
     for i in range(len(A) - 2, -1, -1):
