@@ -8,9 +8,6 @@ there are 3 elements that are smaller than 5 (i.e., 1, 4 and 2), etc.
 Now you need to design an algorithm that computes B using A. The runtime of your algorithm must be
 O(n log n) in worst case, where n is the size of A.
 """
-
-# Method 1: Use an AVL-Tree
-
 # Method 2: Use a BST-tree
 """
 In this approach, we traverse the input array from the ending to the begging and add the elements into the BST.
@@ -64,14 +61,14 @@ class Tree:
         return result
 
 
-def construct_B(A:list):
-    t = Tree(Node(A[-1])) # start from the end of the array
-    B=[0]
-    for i in range(len(A)-2,-1,-1):
-        B.append(t.insert(Node(A[i])))
-    return B[::-1]
+def construct_B(a:list):
+    t = Tree(Node(a[-1])) # start from the end of the array
+    b=[0]
+    for i in range(len(a)-2,-1,-1):
+        b.append(t.insert(Node(a[i])))
+    return b[::-1]
 
 
 if __name__ == "__main__":
-    A = [3, 5, 1, 4, 7, 6, 2]
-    print(construct_B(A))
+    a = [3, 5, 1, 4, 7, 6, 2]
+    print(construct_B(a))

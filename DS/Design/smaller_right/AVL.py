@@ -18,7 +18,7 @@ than all nodes in the left-subtree. Hence the size of the left sub-tree is B[i] 
 """
 
 
-class Node():
+class Node:
     """
     We augment the AVL such that every node N contains size the subtree rooted at N.
     """
@@ -110,13 +110,13 @@ def insert(root: Node, key: int, index: int, count: list):
     return root
 
 
-def construct(A: list):
+def construct(a: list):
     # start from the end of the array
-    root = Node(A[-1])
-    B=[0]*len(A)
-    for i in range(len(A) - 2, -1, -1):
-        root = insert(root, A[i], i, B)
-    return B
+    root = Node(a[-1])
+    b=[0]*len(a)
+    for i in range(len(a) - 2, -1, -1):
+        root = insert(root, a[i], i, b)
+    return b
 
 
 if __name__ == "__main__":
