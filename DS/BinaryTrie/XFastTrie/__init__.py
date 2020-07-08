@@ -34,6 +34,21 @@ def _find(x: str, t: XFastTrie):
     return tmp, start
 
 
+def _find(x: int, t: XFastTrie):
+    start, end = 0, len(x) + 1
+    ix = int(x, 2)
+    tmp, pre = t, ""
+    while end - start > 1:
+        mid = (start + end) // 2
+        pre = ix >> (t.w - mid)
+        if pre in t.table[mid]:
+            start = mid
+            tmp = t.table[start][pre]
+        else:
+            end = mid
+    return tmp, start
+
+
 def predecessor(x: str, t: XFastTrie):
     tmp, level = _find(x, t)
     if level == 0 or level == t.height:
